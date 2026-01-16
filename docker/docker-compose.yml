@@ -1,0 +1,23 @@
+version: '1.0'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: gf-mysql
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456  # 替换为你的密码
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+      TZ: Asia/Shanghai
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/log:/var/log/mysql
+      - ./mysql/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - gf-network
+networks:
+  gf-network:
+    driver: bridge
