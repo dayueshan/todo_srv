@@ -21,7 +21,7 @@
 - 后期接入通用第三方功能、分布式数据库、部署自动化
 
 ## 程序说明:
-- 仓库地址，https://goframe.org/quick
+- 仓库地址，https://github.com/dayueshan/todo_srv
 - 依赖：
   - docker
   - 镜像仓库
